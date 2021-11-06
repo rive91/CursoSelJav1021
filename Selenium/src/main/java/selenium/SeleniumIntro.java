@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class SeleniumIntro {
 
@@ -66,6 +67,15 @@ public class SeleniumIntro {
 		}else {
 			System.out.println("ERROR: el mensaje no contiene el nombre de SAI");
 		}
+		
+		//DropDowns
+		Select drpDwnLeaveType = new Select(driver.findElement(By.id("assignleave_txtLeaveType")));
+		drpDwnLeaveType.selectByVisibleText("US - Vacation");
+		drpDwnLeaveType.selectByIndex(1);
+		
+		//Cerrar Navegador Web
+		driver.close();//Cerrar la ventana actual del webdriver
+		driver.quit();//Cierra todas las ventanas del browser que el webdriver ha abierto
 		
 	}
 
