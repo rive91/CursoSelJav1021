@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import globalVariables.VariablesGlobales;
+import navigationPages.CommonMethods;
 import navigationPages.LoginPage;
 import setupDriver.DriverSetup;
 
@@ -24,10 +25,12 @@ public class TC_01_Login {
 	@Test
 	public void TC_01() {
 		login.login(VariablesGlobales.USER_ADMIN, VariablesGlobales.PWD_ADMIN);
+		
 	}
 	
 	@AfterTest
 	public void closeDriver() {
+		CommonMethods.takeScreenshot(driver, "TC_01_Login");
 		driver.quit();
 	}
 }

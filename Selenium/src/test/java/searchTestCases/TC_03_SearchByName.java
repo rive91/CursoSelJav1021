@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import globalVariables.VariablesGlobales;
+import navigationPages.CommonMethods;
 import navigationPages.DashboardPage;
 import navigationPages.DirectoryPage;
 import navigationPages.LoginPage;
@@ -43,6 +44,7 @@ public class TC_03_SearchByName {
 		
 		@AfterTest
 		public void closeDriver() {
+			CommonMethods.takeScreenshot(driver, "TC_03_SearchByName");
 			driver.quit();
 		}
 }

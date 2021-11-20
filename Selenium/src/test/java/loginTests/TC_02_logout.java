@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import globalVariables.VariablesGlobales;
+import navigationPages.CommonMethods;
 import navigationPages.DashboardPage;
 import navigationPages.LoginPage;
 import setupDriver.DriverSetup;
@@ -24,13 +25,14 @@ public class TC_02_logout {
 	}
 	
 	@Test
-	public void TC_01() {
-		login.login(VariablesGlobales.USER_ADMIN, VariablesGlobales.PWD_ADMIN);
+	public void TC_02() {
+		login.login(VariablesGlobales.USER_ADMIN, "asdasd");
 		dashboard.logout();
 	}
 	
 	@AfterTest
 	public void closeDriver() {
+		CommonMethods.takeScreenshot(driver, "TC_02_logout");
 		driver.quit();
 	}
 }
